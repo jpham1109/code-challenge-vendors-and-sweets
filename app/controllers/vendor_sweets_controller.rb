@@ -15,7 +15,7 @@ class VendorSweetsController < ApplicationController
         new_vendor_sweet = VendorSweet.create(vendor_sweet_params)
         
         if new_vendor_sweet.valid?
-            redirect_to vendor_path(new_vendor_sweet.vendor_id)
+            redirect_to vendor_path(new_vendor_sweet.vendor)
         else 
             flash[:errors] = new_vendor_sweet.errors.full_messages
             redirect_to new_vendor_sweet_path

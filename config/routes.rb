@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :vendor_sweets
+  resources :vendor_sweets, only: [:index, :new, :create, :show]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/sweets', to: "sweets#index", as: "sweets"

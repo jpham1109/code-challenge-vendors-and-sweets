@@ -23,4 +23,8 @@ end
 sweets.each do |sweet|
   Sweet.create(name: sweet)
 end
+
+5.times do
+  VendorSweet.create(price: (1 ..50).to_a.sample, vendor: Vendor.all.sample, sweet: Sweet.all.sample)
+end
 puts "🧁🍪🍭SEEDED🍫🍬🍧"

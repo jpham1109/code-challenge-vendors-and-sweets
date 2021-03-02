@@ -1,7 +1,9 @@
 <h1>All Vendors</h1>
-
+<main>
+<h3>Market price: <%= @vendors.average_vendor_price %></h3>
 <ul>
   <% @vendors.each do |vendor| %>
-    <li><%= link_to vendor.name, vendor_path(vendor) %>, <em> Average price </em> <%= vendor.average_price %></li>
+    <li><%= link_to vendor.name, vendor_path(vendor) %>, <em> Average price: </em> <%= vendor.average_price %></li>
   <% end  %>
 </ul>
+</main>

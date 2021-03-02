@@ -3,8 +3,9 @@
 <hr>
 <p><strong> Name: </strong><%= @vendor.name %></p><hr>
 <p><strong> List of sweets: </strong>
-  <ul><% @vendor.sweets.uniq.each do |sweet| %></p><hr>
-    <li><%= link_to sweet.name, sweet_path(sweet) %></li>
+  <ul><% @vendor.vendor_sweets.uniq.each do |vs| %></p><hr>
+    <li><%= link_to vs.sweet.name, sweet_path(vs.sweet) %>, Price: <%= vs.price %></li>
   <% end %>
   </ul>
+<p><%= link_to "All vendors", vendors_path %></p>
 </main>
