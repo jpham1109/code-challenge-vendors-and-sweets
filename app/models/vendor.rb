@@ -4,7 +4,10 @@ class Vendor < ApplicationRecord
 
     def average_price
         if self.vendor_sweets.size > 0
-        self.vendor_sweets.sum {|vs| vs.price} / self.vendor_sweets.size.to_f.round(2)
+        average = self.vendor_sweets.sum {|vs| vs.price}.to_f / self.vendor_sweets.size
+        average.round(2)
+        else
+        0
         end
     end
 
